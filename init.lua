@@ -7,7 +7,6 @@ if vim.g.vscode then
   else
     vim.cmd("source ~/.config/nvim/vscode/settings.vim")
   end
-
 else
   require("pre-init")
   require("general")

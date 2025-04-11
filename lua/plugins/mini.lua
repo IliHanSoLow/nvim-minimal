@@ -8,6 +8,12 @@ return {
 
       local align = require 'mini.align'
       align.setup {}
+
+      local surround = require 'mini.surround'
+      surround.setup {}
+
+      -- local pairs = require 'mini.pairs'
+      -- pairs.setup {}
     end
   }
 }

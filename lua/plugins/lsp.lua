@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
 
     dependencies = {
+      "saghen/blink.cmp",
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
@@ -19,12 +20,16 @@ return {
     config = function()
       -- LSP --
       vim.lsp.inlay_hint.enable()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       -- LSPCONFIG --
       local lspc = require("lspconfig")
-      lspc.lua_ls.setup {}
-      lspc.elixirls.setup {}
-      lspc.nixd.setup {}
+      lspc.lua_ls.setup { capabilities = capabilities }
+      lspc.elixirls.setup { capabilities = capabilities }
+      lspc.nixd.setup { capabilities = capabilities }
+      lspc.basedpyright.setup { capabilities = capabilities }
+      lspc.rust_analyzer.setup { capabilities = capabilities }
+      lspc.gopls.setup { capabilities = capabilities }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
