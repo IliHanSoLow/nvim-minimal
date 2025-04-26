@@ -14,6 +14,12 @@ vim.keymap.set("n", "<space>qc", "<cmd>cclose<CR>")
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 
+vim.keymap.set("n", "<space>bd", "<cmd>bd<CR>")
+vim.keymap.set("n", "<space>bp", "<cmd>bp<CR>")
+vim.keymap.set("n", "<space>bn", "<cmd>bn<CR>")
+vim.keymap.set("n", "<space>bo", "<cmd><CR>")
+vim.keymap.set("n", "<space>bd", "<cmd>bd<CR>")
+
 local job_id = 0
 vim.keymap.set("n", "<space>st", function()
   vim.cmd.vnew()
@@ -22,6 +28,8 @@ vim.keymap.set("n", "<space>st", function()
   vim.api.nvim_win_set_height(0, 10)
   job_id = vim.bo.channel
 end)
+
+vim.keymap.set("n", "<space><space>", "<cmd>noh<CR>")
 
 -- Example
 vim.keymap.set("n", "<space>example", function()

@@ -26,7 +26,12 @@ return {
       local lspc = require("lspconfig")
       lspc.lua_ls.setup { capabilities = capabilities }
       lspc.elixirls.setup { capabilities = capabilities }
-      lspc.nixd.setup { capabilities = capabilities }
+      lspc.nixd.setup {
+        capabilities = capabilities,
+        formatting = {
+          command = { "alejandra" },
+        },
+      }
       lspc.basedpyright.setup { capabilities = capabilities }
       lspc.rust_analyzer.setup { capabilities = capabilities }
       lspc.gopls.setup { capabilities = capabilities }

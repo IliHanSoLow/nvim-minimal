@@ -7,6 +7,7 @@ return {
       ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "nu", "elixir", "python" },
       sync_install = false,
       auto_install = false,
+      indent = { enable = true, },
       highlight = {
         enable = true,
         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
