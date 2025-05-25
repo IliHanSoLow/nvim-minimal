@@ -35,12 +35,24 @@ return {
       lspc.basedpyright.setup { capabilities = capabilities }
       lspc.rust_analyzer.setup { capabilities = capabilities }
       lspc.gopls.setup { capabilities = capabilities }
+      lspc.clangd.setup {
+        capabilities = capabilities,
+        cmd = { "clangd", "--fallback-style=GNU" },
+      }
+      lspc.phpactor.setup { capabilities = capabilities }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
         callback = function(args)
           local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
           if not client then return end
+
+          vim.keymap.set("n", "gd", function()
+            vim.lsp.buf.definition()
+          end)
+          vim.keymap.set("n", "gD", function()
+            vim.lsp.buf.declaration()
+          end)
 
           -- Autoformat on save
           if not client:supports_method('textDocument/willSaveWaitUntil')

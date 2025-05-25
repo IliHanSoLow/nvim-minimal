@@ -22,3 +22,16 @@ if gammastep_night() then
 else
   vim.opt.background = "light"
 end
+-- vim.opt.background = "dark"
+
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
+
+vim.opt.undofile = true
+local undodir = vim.fn.expand("~/.local/share/nvim-minimal/undo")
+vim.opt.undodir = undodir
+if vim.fn.isdirectory(undodir) == 0 then
+  vim.fn.mkdir(undodir, 'p')
+end
+vim.opt.undolevels = 1000
+vim.opt.undoreload = 10000

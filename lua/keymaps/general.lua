@@ -37,9 +37,10 @@ vim.keymap.set("n", "<space>example", function()
 end)
 
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")
-
 vim.keymap.set("t", "<C-space>", "<C-\\><C-n>")
+vim.keymap.set("n", "<space>u", "<cmd>UndotreeToggle<CR>")
 
+vim.keymap.set("n", "<space>rm", "<cmd>make<CR>")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highligh when yanking',
