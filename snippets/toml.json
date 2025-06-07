@@ -1,0 +1,16 @@
+{
+    "pyproject": {
+	"prefix": "pyproject",
+	"body": [
+	    "[build-system]",
+	    "requires = [\"setuptools>=42\", \"wheel\"]",
+	    "build-backend = \"setuptools.build_meta\"",
+	    "[project]",
+	    "name = \"${1:packagename}\"",
+	    "version = \"0.1.0\"",
+	    "description = \"${2:description}\"",
+	    "authors = [{name = \"${3:authors}\"}]",
+	    "license = {text = \"MIT\"}"
+	]
+    }
+}

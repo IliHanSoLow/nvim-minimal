@@ -20,6 +20,8 @@ vim.keymap.set("n", "<space>bn", "<cmd>bn<CR>")
 vim.keymap.set("n", "<space>bo", "<cmd><CR>")
 vim.keymap.set("n", "<space>bd", "<cmd>bd<CR>")
 
+vim.keymap.set("n", "<space>fd", "<cmd>cd %:p:h<CR>")
+
 local job_id = 0
 vim.keymap.set("n", "<space>st", function()
   vim.cmd.vnew()

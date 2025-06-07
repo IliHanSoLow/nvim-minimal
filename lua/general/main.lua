@@ -4,6 +4,10 @@ vim.opt.relativenumber = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.shell = "bash"
+vim.wo.wrap = false
+
+-- vim.opt.background = "light"
+vim.opt.background = "dark"
 
 -- Remove trailing spaces
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -11,18 +15,18 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
-local function gammastep_night()
-  local command = "gammastep -p 2>&1| grep 'Night'"
-  local result = os.execute(command)
-  return result == true or result == 0
-end
+-- local function gammastep_night()
+--   local command = "gammastep -p 2>&1| grep 'Night'"
+--   local result = os.execute(command)
+--   return result == true or result == 0
+-- end
 
-if gammastep_night() then
-  vim.opt.background = "dark"
-else
-  vim.opt.background = "light"
-end
--- vim.opt.background = "dark"
+-- if gammastep_night() then
+--   vim.opt.background = "dark"
+-- else
+--   vim.opt.background = "light"
+-- end
+-- -- vim.opt.background = "dark"
 
 vim.api.nvim_create_user_command('W', 'w', {})
 vim.api.nvim_create_user_command('Q', 'q', {})

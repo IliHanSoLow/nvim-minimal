@@ -22,6 +22,7 @@ return {
     vim.keymap.set("n", "<space>ff", require('telescope.builtin').find_files)
     -- vim.keymap.set("n", "<space>fg", require('telescope.builtin').live_grep)
     vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags)
+    vim.keymap.set("n", "<space>fr", require('telescope.builtin').oldfiles)
 
     vim.keymap.set("n", "<space>en", function()
       require('telescope.builtin').find_files {
@@ -35,9 +36,13 @@ return {
     end)
 
     require "general.telescope.multigrep".setup()
+    -- require "general.telescope.harpoon".setup()
 
     vim.keymap.set("n", "<space>bi", function()
       require('telescope.builtin').buffers()
     end)
+
+    vim.keymap.set("n", "<space>of", "<cmd>ObsidianQuickSwitch<CR>")
+    vim.keymap.set("n", "<space>ow", "<cmd>ObsidianWorkspace<CR>")
   end
 }

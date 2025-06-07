@@ -1,0 +1,12 @@
+{
+    "pyproject": {
+	"prefix": "mainfile",
+	"body": [
+	    "def main():",
+	    "	${1:pass}",
+	    "",
+	    "if __name__ == \"__main__\":",
+	    "	main()"
+	]
+    }
+}
