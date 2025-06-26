@@ -32,7 +32,8 @@ return {
           command = { "alejandra" },
         },
       }
-      lspc.basedpyright.setup { capabilities = capabilities }
+      -- lspc.basedpyright.setup { capabilities = capabilities }
+      lspc.pyright.setup { capabilities = capabilities }
       lspc.rust_analyzer.setup { capabilities = capabilities }
       lspc.gopls.setup { capabilities = capabilities }
       lspc.clangd.setup {

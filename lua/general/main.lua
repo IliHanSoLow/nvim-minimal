@@ -5,6 +5,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.shell = "bash"
 vim.wo.wrap = false
+vim.o.scrolloff = 5
 
 -- vim.opt.background = "light"
 vim.opt.background = "dark"

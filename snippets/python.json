@@ -8,5 +8,27 @@
 	    "if __name__ == \"__main__\":",
 	    "	main()"
 	]
+    },
+    "iterator":{
+	"prefix": "iterator",
+	"body": [
+	    "class ${1:iterator}",
+	    "    def __init__(self, ${2:vars}):",
+	    "        pass",
+	    "    ",
+	    "    def __iter__(self):",
+	    "        return self",
+	    "    ",
+	    "    def __next__(self):",
+	    "        raise StopIteration",
+	    "        return ${3:something}"
+	]
+    },
+    "generator":{
+	"prefix": "generator",
+	"body": [
+	    "def ${1:generator}(${2:values}):",
+	    "    yieldval = yield ${3:toyield}"
+	]
     }
 }
