@@ -38,7 +38,8 @@ vim.keymap.set("n", "<space>example", function()
   vim.fn.chansend(job_id, { "echo 'hello world'\r\n" })
 end)
 
-vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+-- vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+vim.keymap.set("n", "-", "<cmd>Sex!<CR>")
 vim.keymap.set("t", "<C-space>", "<C-\\><C-n>")
 vim.keymap.set("n", "<space>u", "<cmd>UndotreeToggle<CR>")
 
