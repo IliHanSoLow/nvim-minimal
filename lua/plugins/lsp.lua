@@ -23,24 +23,25 @@ return {
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       -- LSPCONFIG --
-      local lspc = require("lspconfig")
-      lspc.lua_ls.setup { capabilities = capabilities }
-      lspc.elixirls.setup { capabilities = capabilities }
-      lspc.nixd.setup {
-        capabilities = capabilities,
+      local lspc = vim.lsp.config
+      vim.lsp.config('*', {
+        capabilities = capabilities
+      })
+      lspc['lua_ls'] = {}
+      lspc['elixirls'] = {}
+      lspc['nixd'] = {
         formatting = {
           command = { "alejandra" },
         },
       }
       -- lspc.basedpyright.setup { capabilities = capabilities }
-      lspc.pyright.setup { capabilities = capabilities }
-      lspc.rust_analyzer.setup { capabilities = capabilities }
-      lspc.gopls.setup { capabilities = capabilities }
-      lspc.clangd.setup {
-        capabilities = capabilities,
+      lspc['pyright'] = {}
+      lspc['rust_analyzer'] = {}
+      lspc['gopls'] = {}
+      lspc['clangd'] = {
         cmd = { "clangd", "--fallback-style=GNU" },
       }
-      lspc.phpactor.setup { capabilities = capabilities }
+      lspc['phpactor'] = {}
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
