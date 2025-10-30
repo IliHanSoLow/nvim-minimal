@@ -15,7 +15,7 @@ return {
   },
   {
     'sainnhe/everforest',
-    enabled = true,
+    enabled = false,
     config = function()
       vim.g.everforest_enable_italic = true
       vim.cmd.colorscheme('everforest')
@@ -50,6 +50,13 @@ return {
         cache = true,
       })
       vim.cmd.colorscheme('cyberdream')
+    end
+  },
+  {
+    "oonamo/ef-themes.nvim",
+    enabled = true,
+    config = function()
+      vim.cmd.colorscheme('ef-winter')
     end
   },
 }
